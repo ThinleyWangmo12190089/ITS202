@@ -1,4 +1,4 @@
-public class LinkedListTest{
+public class check{
 	public static void main(String[] args) {
 		LinkedList obj1 = new LinkedList();
 
