@@ -1,117 +1,106 @@
-public class Linkedlist{
-
-	//declaration
-	int size;
+public class LinkedList{
 	Node head;
 	Node tail;
-	//initialization 
-	public Linkedlist(){
-		size =0;
+	int size;
+
+	public LinkedList(){
 		head = null;
 		tail = null;
+		size = 0;
 	}
-//methods of linked list
-	//1.it will return the size of the list
+
 	public int size(){
 		return size;
 	}
-	//2.returns true if the list is empty
+
 	public boolean isEmpty(){
-		if (size() == 0){
+		if (size == 0) {
 			return true;
 		}
 		return false;
 	}
-	//3.
+	// 
 	public int first(){
-		if (isEmpty()){
-			return 0;
-		}
-		return head.getElement();	//to access private of node class 
+		return head.getElement();
 	}
-	//
+	// 
 	public int last(){
-		if(isEmpty()) {
-			return 0;
-		}
-		return tail.getElement();	//to access private of node class
+		return tail.getElement();
 	}
 
-	public int addFirst(int value){
-		Node newest = new Node(value, null);
-		//when there is no linked list
-		if(size() == 0) {
-			head = newest;
-			tail = newest;
+	// 
+	public void addFirst(int n){
+		Node newest = new Node(n, null);
+
+		if (size == 0) {
+			 head = newest;
+			 tail = newest;
 		}
-		//when there are nodes in linked list
+
 		else{
 			newest.setNext(head);
 			head = newest;
 		}
-
-		size = size + 1; //increment
+		size = size + 1;
 	}
 
-	public int addLast(int value){
-		Node newest = new Node(value, null);
-		//when there is no linked list
-		if(size() == 0) {
+	// 
+	public void addLast(int n){
+		Node newest = new Node(n, null);
+		if (size == 0) {
 			head = newest;
 			tail = newest;
 		}
-		//when there are nodes in linked list
 		else{
 			tail.setNext(newest);
-			tail = newest;
+			tail =newest;
 		}
-
-		size = size + 1; //increment
+		size += 1;
 	}
 
-	//remove a node from a linked list 
+	// 
 	public int removeFirst(){
 		int deletedElement = head.getElement();
-		if (size() == 0) {
+		if (size == 0) {
 			return 0;
 		}
-		else {
+		else{
 			head = head.getNext();
+			size = size -1;
 		}
-		size = size - 1; //decerement
 		return deletedElement;
 	}
 
-	class Nodes{     
-		//declaration 
-		private int element;
-		private Node next;
+
+
+}
+
+class Node{
+	private int element;
+	private Node next;
+	// constructor
+	public Node(int element, Node next ){
+	    this.element = element;
+		this.next = next;
 	}
-	//constructor
-	public Nodes(int value, Node n){
-		element = value;
-		next = n;
-	}
-	//to access private class we use get element 
+
+	// getElement
 	public int getElement(){
 		return element;
 	}
-	//set is used to insert element
-	public void setElement(int ele){
-		element = ele;
-	}
-	//
+
+	// getNext()
 	public Node getNext(){
 		return next;
 	}
-	//
-	public void setNext( Node n1){
-		next = n1;
-	}
-	public static void main(String[] args){
 
+	// 
+	public void setElement(int n){
+		element = n;
+	}
+
+	// 
+	public void setNext(Node n){
+		next = n;
 	}
 }
-
-
-//in java, class will create and object even if we dont have it cause java takes default constructor which is empty.
