@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 public class LinkedList{
+=======
+public class Linkedlist{
+>>>>>>> c901baacdcf412dab3bdc610bf75e6459892b3ed
 	Node head;
 	Node tail;
 	int size;
 
+<<<<<<< HEAD
 	public LinkedList(){
+=======
+	public Linkedlist(){
+>>>>>>> c901baacdcf412dab3bdc610bf75e6459892b3ed
 		head = null;
 		tail = null;
 		size = 0;
@@ -93,6 +101,7 @@ class Node{
 	public Node getNext(){
 		return next;
 	}
+<<<<<<< HEAD
 
 	// 
 	public void setElement(int n){
@@ -104,3 +113,16 @@ class Node{
 		next = n;
 	}
 }
+=======
+
+	// 
+	public void setElement(int n){
+		element = n;
+	}
+
+	// 
+	public void setNext(Node n){
+		next = n;
+	}
+}
+>>>>>>> c901baacdcf412dab3bdc610bf75e6459892b3ed
